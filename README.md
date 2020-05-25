@@ -14,6 +14,7 @@ Some of the methods perform pruning periodically and can have their final sparsi
 For SNIP, the sparsity can be directly selected. For Hoyer-Square, it is a function of the regularization term as well as the pruning threshold. 
 
 Below, we provide example commands used for generating the runs on Resnet18:
+
 **FlipOut (@99.9%, lambda=1) :**
 ```
 python main.py --model resnet18 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
@@ -64,4 +65,5 @@ python main.py --model resnet18 --dataset cifar10 -bs 128 -e 500 -lr 0.1 \
 ```
 
 The runs are saved in the directory specified by ```logdir``` with the filename ```comment``` and can be inspected with Tensorboard.
+
 To run on different model/dataset combinations, simply replace the ```-m``` and ```-d``` arguments, i.e. ```-m vgg19 -d cifar10``` or ```-m densenet121 -d imagenette```. For other levels of sparsity, please refer to the table at the top of the page.

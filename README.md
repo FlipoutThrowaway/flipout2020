@@ -13,7 +13,7 @@ Some of the methods perform pruning periodically and can have their final sparsi
 For SNIP, the sparsity can be directly selected. For Hoyer-Square, it is a function of the regularization term as well as the pruning threshold. 
 
 Below, we provide example commands used for generating the runs on Resnet18:
-**FlipOut (@99.9%, \\(\lambda=1\\)) :**
+**FlipOut (@99.9%, lambda=1) :**
 ```
 python main.py --model resnet18 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
                 --opt sgd --momentum 0.9 --reg_type wdecay --lambda 5e-4 --use_scheduler \
@@ -50,7 +50,7 @@ python main.py --model resnet18 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
                 --comment="test snip" \
                 --logdir=resnet18/
 ```
-**Hoyer-Square (\\(\lambda=3e-4\\), threshold=\\(1e-4\\) )**:
+**Hoyer-Square (lambda=3e-4, threshold=1e-4 )**:
 ```
 python main.py --model resnet18 --dataset cifar10 -bs 128 -e 500 -lr 0.1 \
                 --opt sgd --momentum 0.9 --reg_type wdecay --lambda 5e-4 --use_scheduler \

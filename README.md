@@ -28,7 +28,7 @@ Below, we provide a table of results as well as example commands used for genera
 **ResNet18 on CIFAR10:**
 | Method | Sparsity (%)| Accuracy (%)|
 | --- | --- | --- |
-| FlipOut | 99.9 | 82.5 ± 0.11 |
+| FlipOut | 99.9 | **82.5 ± 0.11** |
 | GlobalMagnitude | 99.9 | 80.63 ± 0.45 |
 | Random | 99.9 | 13.65 ± 6.32 |
 | SNIP | 99.9 | 10 ± 0 |
@@ -37,11 +37,11 @@ Below, we provide a table of results as well as example commands used for genera
 **DesneNet-121 on Imagenette:**
 | Method | Sparsity (%)| Accuracy (%)|
 | --- | --- | --- |
-| FlipOut | 99.9 | **87.39 ± 0.23** |
-| GlobalMagnitude | 99.9 | 82.89 ± 2.00 |
-| Random | 99.9 | 0.10 ± 0 |
-| SNIP | 99.9 | 0.10 ± 0 |
-| Hoyer-Square | 99.89 | 82.78 |
+| FlipOut | 99.9 | 74.13 ± 1.4 |
+| GlobalMagnitude | 99.9 | 67.94 ± 2.68 |
+| Random | 99.9 | 9.9 ± 0.79 |
+| SNIP | 99.9 | 9.09 ± 0 |
+| Hoyer-Square (λ=3e-4) | 99.95 | **78.44** |
 
 **FlipOut (@99.9%, lambda=1) :**
 ```

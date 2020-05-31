@@ -14,13 +14,13 @@ Some of the methods perform pruning periodically and can have their final sparsi
 For SNIP, the sparsity can be directly selected. For Hoyer-Square, it is a function of the regularization term as well as the pruning threshold. 
 
 Below, we provide a table of results as well as example commands used for generating the runs on VGG19.
-| Method | Sparsity | Accuracy |
+| Method | Sparsity (%)| Accuracy (%)|
 | --- | --- | --- |
-| FlipOut | 99.9% | 87.39% ±  |
-| GlobalMagnitude | 99.9% |  |
-| Random | 99.9% | 50 |
-| SNIP | 99.9% | 39 |
-| Hoyer-Square | 99.9% | 32 |
+| FlipOut | 99.9 | 87.39 ± 0.23 |
+| GlobalMagnitude | 99.9 | 82.89 ± 2.00 |
+| Random | 99.9 | 0.10 ± 0 |
+| SNIP | 99.9 | 0.10 ± 0 |
+| Hoyer-Square | 99.89 | 82.78 |
 
 **FlipOut (@99.9%, lambda=1) :**
 ```

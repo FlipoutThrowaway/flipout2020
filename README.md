@@ -13,11 +13,18 @@ Some of the methods perform pruning periodically and can have their final sparsi
 
 For SNIP, the sparsity can be directly selected. For Hoyer-Square, it is a function of the regularization term as well as the pruning threshold. 
 
-Below, we provide example commands used for generating the runs on Resnet18:
+Below, we provide a table of results as well as example commands used for generating the runs on VGG19.
+| Method | Sparsity | Accuracy |
+| --- | --- | --- |
+| FlipOut | 99.9% | 87.39% ±  |
+| GlobalMagnitude | 99.9% |  |
+| Random | 99.9% | 50 |
+| SNIP | 99.9% | 39 |
+| Hoyer-Square | 99.9% | 32 |
 
 **FlipOut (@99.9%, lambda=1) :**
 ```
-python main.py --model resnet18 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
+python main.py --model vgg19 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
                 --opt sgd --momentum 0.9 --reg_type wdecay --lambda 5e-4 --use_scheduler \
                 --milestones 150 250 \
                 --prune_criterion flipout --prune_freq 32 --prune_rate 0.5 \
@@ -27,7 +34,7 @@ python main.py --model resnet18 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
 ```
 **Global Magnitude (@99.9%):**
 ```
-python main.py --model resnet18 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
+python main.py --model vgg19 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
                 --opt sgd --momentum 0.9 --reg_type wdecay --lambda 5e-4 --use_scheduler \
                 --milestones 150 250 \
                 --prune_criterion global_magnitude --prune_freq 32 --prune_rate 0.5 \
@@ -36,7 +43,7 @@ python main.py --model resnet18 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
 ```
 **Random (@99.9%):**
 ```
-python main.py --model resnet18 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
+python main.py --model vgg19 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
                 --opt sgd --momentum 0.9 --reg_type wdecay --lambda 5e-4 --use_scheduler \
                 --milestones 150 250 \
                 --prune_criterion random --prune_freq 32 --prune_rate 0.5 \
@@ -45,19 +52,19 @@ python main.py --model resnet18 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
 ```
 **SNIP (@99.9%)**:
 ```
-python main.py --model resnet18 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
+python main.py --model vgg19 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
                 --opt sgd --momentum 0.9 --reg_type wdecay --lambda 5e-4 --use_scheduler \
                 --milestones 150 250 \
                 --prune_criterion snip --snip_sparsity 0.999 \
                 --comment="test snip" \
                 --logdir=resnet18/
 ```
-**Hoyer-Square (lambda=3e-4, threshold=1e-4 )**:
+**Hoyer-Square (lambda=6e-5, threshold=1e-4 )**:
 ```
-python main.py --model resnet18 --dataset cifar10 -bs 128 -e 500 -lr 0.1 \
+python main.py --model vgg19 --dataset cifar10 -bs 128 -e 500 -lr 0.1 \
                 --opt sgd --momentum 0.9 --reg_type wdecay --lambda 5e-4 --use_scheduler \
                 --milestones 150 250 \
-                --add_hs --hoyer_lambda 3e-4 \
+                --add_hs --hoyer_lambda 6e-5 \
                 --prune_criterion threshold --magnitude_threshold 1e-4 \
                 --prune_freq 350 --stop_hoyer_at 350 \
                 --comment="test hoyer-square" \

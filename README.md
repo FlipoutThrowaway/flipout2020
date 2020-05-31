@@ -102,4 +102,4 @@ python main.py --model vgg19 --dataset cifar10 -bs 128 -e 500 -lr 0.1 \
 
 The runs are saved in the directory specified by ```logdir``` with the filename ```comment``` and can be inspected with Tensorboard.
 
-To run on different model/dataset combinations, simply replace the ```-m``` and ```-d``` arguments, i.e. ```-m vgg19 -d cifar10``` or ```-m densenet121 -d imagenette```. For other levels of sparsity, modify the prune frequency (```prune_freq```) according to the table at the top of the page, or the ```hoyer_lambda``` parameter in Hoyer-Square and ```snip_sparsity``` in SNIP.
+To run on different model/dataset combinations, simply replace the ```-m``` and ```-d``` arguments, i.e. ```-m vgg19 -d cifar10``` or ```-m densenet121 -d imagenette```. For other levels of sparsity, modify the prune frequency (```prune_freq```) according to the table at the top of the page, or the ```hoyer_lambda```/```magnitude_threshold``` parameter in Hoyer-Square and ```snip_sparsity``` in SNIP.

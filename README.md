@@ -12,6 +12,12 @@ Some of the methods perform pruning periodically and can have their final sparsi
 | 99.61% | 39 |
 | 99.9% | 32 |
 
+We compare our method to:
+- random pruning
+- global magnitude pruning ([magnitude pruning](https://arxiv.org/abs/1506.02626) modified to rank weights globally according to the observations by [Frankle & Carbin](https://arxiv.org/abs/1803.03635))
+- [SNIP](https://arxiv.org/abs/1810.02340) 
+- [Hoyer-Square](https://openreview.net/pdf?id=rylBK34FDS).
+
 For SNIP, the sparsity can be directly selected. For Hoyer-Square, it is a function of the regularization term as well as the pruning threshold. 
 
 Below, we provide tables with results comparing our method to other baselines:
@@ -45,7 +51,7 @@ Below, we provide tables with results comparing our method to other baselines:
 
 Following you can find example commands to replicate the results on VGG19. For other model/dataset combinations, please skip to the last two paragraphs of the file.
 
-**FlipOut (@99.9%, lambda=1) :**
+**FlipOut (@99.9%, λ=1) :**
 ```
 python main.py --model vgg19 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
                 --opt sgd --momentum 0.9 --reg_type wdecay --lambda 5e-4 --use_scheduler \
@@ -82,7 +88,7 @@ python main.py --model vgg19 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \
                 --comment="test snip" \
                 --logdir=resnet18/
 ```
-**Hoyer-Square (lambda=6e-5, threshold=1e-4 )**:
+**Hoyer-Square (λ=6e-5, threshold=1e-4 )**:
 ```
 python main.py --model vgg19 --dataset cifar10 -bs 128 -e 500 -lr 0.1 \
                 --opt sgd --momentum 0.9 --reg_type wdecay --lambda 5e-4 --use_scheduler \
@@ -96,4 +102,4 @@ python main.py --model vgg19 --dataset cifar10 -bs 128 -e 500 -lr 0.1 \
 
 The runs are saved in the directory specified by ```logdir``` with the filename ```comment``` and can be inspected with Tensorboard.
 
-To run on different model/dataset combinations, simply replace the ```-m``` and ```-d``` arguments, i.e. ```-m vgg19 -d cifar10``` or ```-m densenet121 -d imagenette```. For other levels of sparsity, please refer to the table at the top of the page.
+To run on different model/dataset combinations, simply replace the ```-m``` and ```-d``` arguments, i.e. ```-m vgg19 -d cifar10``` or ```-m densenet121 -d imagenette```. For other levels of sparsity, modify the prune frequency (```prune_freq```) according to the table at the top of the page, or the ```hoyer_lambda``` parameter in Hoyer-Square and ```snip_sparsity``` in SNIP.

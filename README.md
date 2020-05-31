@@ -2,8 +2,8 @@ This is a repository of the code used to generate the experiments in **FlipOut :
 
 For the Imagenette experiments, please download the dataset (https://s3.amazonaws.com/fast-ai-imageclas/imagenette2.tgz) and place them in a folder named ```data``` in the root directory.
 Some of the methods perform pruning periodically and can have their final sparsity determined by the pruning rate (how many parameters are removed each time, in percentages) and frequency (how often we prune, in epochs). Below we include a reference table for the sparsities we used in our experiments and the pruning frequencies, assuming 350 epochs of training and a pruning rate of 50%.
-| VGG19 | 
-| --- |
+
+
 | Sparsity | Prune frequency |
 | --- | --- |
 | 75% | 117 |
@@ -15,6 +15,8 @@ Some of the methods perform pruning periodically and can have their final sparsi
 For SNIP, the sparsity can be directly selected. For Hoyer-Square, it is a function of the regularization term as well as the pruning threshold. 
 
 Below, we provide a table of results as well as example commands used for generating the runs on VGG19.
+
+**VGG-19:**
 | Method | Sparsity (%)| Accuracy (%)|
 | --- | --- | --- |
 | FlipOut | 99.9 | **87.39 ± 0.23** |
@@ -22,6 +24,7 @@ Below, we provide a table of results as well as example commands used for genera
 | Random | 99.9 | 0.10 ± 0 |
 | SNIP | 99.9 | 0.10 ± 0 |
 | Hoyer-Square | 99.89 | 82.78 |
+
 
 **FlipOut (@99.9%, lambda=1) :**
 ```

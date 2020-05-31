@@ -20,7 +20,7 @@ We compare our method to:
 
 For SNIP, the sparsity can be directly selected. For Hoyer-Square, it is a function of the regularization term as well as the pruning threshold. 
 
-Below, we provide tables with results comparing our method to other baselines:
+Below, we provide tables with results from the paper, comparing our method to other baselines:
 
 **VGG-19 on CIFAR10:**
 | Method | Sparsity (%)| Accuracy (%)|

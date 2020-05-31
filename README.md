@@ -20,7 +20,7 @@ We compare our method to:
 
 For SNIP, the sparsity can be directly selected. For Hoyer-Square, it is a function of the regularization term as well as the pruning threshold. 
 
-Below, we provide tables with results from the paper, comparing our method to other baselines:
+Below, we provide tables with results from the paper, comparing our method to other baselines. Results are averaged over 3 runs; standard deviations are also included.
 
 **VGG-19 on CIFAR10:**
 | Method | Sparsity (%)| Accuracy (%)|
@@ -49,7 +49,7 @@ Below, we provide tables with results from the paper, comparing our method to ot
 | SNIP | 99.9 | 9.09 ± 0 |
 | Hoyer-Square (λ=3e-4) | 99.95 | **78.44** |
 
-Following you can find example commands to replicate the results on VGG19. For other model/dataset combinations, please skip to the last two paragraphs of the file.
+Following you can find example commands to replicate the results on VGG19. For other model/dataset combinations, please skip to the last two paragraphs of the file. Note that random seeds do not transfer across machines, so your results may slightly differ.
 
 **FlipOut (@99.9%, λ=1) :**
 ```

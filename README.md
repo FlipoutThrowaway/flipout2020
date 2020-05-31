@@ -16,7 +16,7 @@ For SNIP, the sparsity can be directly selected. For Hoyer-Square, it is a funct
 Below, we provide a table of results as well as example commands used for generating the runs on VGG19.
 | Method | Sparsity (%)| Accuracy (%)|
 | --- | --- | --- |
-| FlipOut | 99.9 | 87.39 ± 0.23 |
+| FlipOut | 99.9 | **87.39 ± 0.23** |
 | GlobalMagnitude | 99.9 | 82.89 ± 2.00 |
 | Random | 99.9 | 0.10 ± 0 |
 | SNIP | 99.9 | 0.10 ± 0 |

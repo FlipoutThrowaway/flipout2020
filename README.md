@@ -16,7 +16,25 @@ For SNIP, the sparsity can be directly selected. For Hoyer-Square, it is a funct
 
 Below, we provide a table of results as well as example commands used for generating the runs on VGG19.
 
-**VGG-19:**
+**VGG-19 on CIFAR10:**
+| Method | Sparsity (%)| Accuracy (%)|
+| --- | --- | --- |
+| FlipOut | 99.9 | **87.39 ± 0.23** |
+| GlobalMagnitude | 99.9 | 82.89 ± 2.00 |
+| Random | 99.9 | 10 ± 0 |
+| SNIP | 99.9 | 10 ± 0 |
+| Hoyer-Square (λ=6e-5) | 99.89 | 82.78 |
+
+**ResNet18 on CIFAR10:**
+| Method | Sparsity (%)| Accuracy (%)|
+| --- | --- | --- |
+| FlipOut | 99.9 | 82.5 ± 0.11 |
+| GlobalMagnitude | 99.9 | 80.63 ± 0.45 |
+| Random | 99.9 | 13.65 ± 6.32 |
+| SNIP | 99.9 | 10 ± 0 |
+| Hoyer-Square (λ=1e-4) | 99.89 | 78.58 |
+
+**DesneNet-121 on Imagenette:**
 | Method | Sparsity (%)| Accuracy (%)|
 | --- | --- | --- |
 | FlipOut | 99.9 | **87.39 ± 0.23** |
@@ -24,7 +42,6 @@ Below, we provide a table of results as well as example commands used for genera
 | Random | 99.9 | 0.10 ± 0 |
 | SNIP | 99.9 | 0.10 ± 0 |
 | Hoyer-Square | 99.89 | 82.78 |
-
 
 **FlipOut (@99.9%, lambda=1) :**
 ```

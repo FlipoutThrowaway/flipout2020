@@ -14,8 +14,7 @@ Some of the methods perform pruning periodically and can have their final sparsi
 
 For SNIP, the sparsity can be directly selected. For Hoyer-Square, it is a function of the regularization term as well as the pruning threshold. 
 
-Below, we provide a table of results as well as example commands used for generating the runs on VGG19.
-
+Below, we provide tables with results comparing our method to other baselines:
 **VGG-19 on CIFAR10:**
 | Method | Sparsity (%)| Accuracy (%)|
 | --- | --- | --- |
@@ -43,6 +42,7 @@ Below, we provide a table of results as well as example commands used for genera
 | SNIP | 99.9 | 9.09 ± 0 |
 | Hoyer-Square (λ=3e-4) | 99.95 | **78.44** |
 
+Following you can find example commands to replicate the results on VGG19. For other model/dataset combinations, please skip to the last two paragraphs of the file.
 **FlipOut (@99.9%, lambda=1) :**
 ```
 python main.py --model vgg19 --dataset cifar10 -bs 128 -e 350 -lr 0.1 \

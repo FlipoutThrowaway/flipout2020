@@ -1,3 +1,5 @@
+## FlipOut
+
 This is a repository of the code used to generate the experiments in **FlipOut : Uncovering redundant weights via sign flipping**. It contains the implementation of our proposed method as well as for the baselines. A Conda virtual environment can be created from ```environment.yml```.
 
 For the Imagenette experiments, please download the dataset (https://s3.amazonaws.com/fast-ai-imageclas/imagenette2.tgz) and place them in a folder named ```data``` in the root directory.
